@@ -19,10 +19,10 @@ const Add = () => {
     }
 
     const handelAdd =()=>{
-        setAddValue([...addValue,inputChange, emailChange, numberChange])
+        setAddValue([...addValue,inputChange])
         setInputChange({id:null, name:""})
-        setEmailChange({id:null, email:""})
-        setNumberChange({id:null, number:""})
+        // setEmailChange({id:null, email:""})
+        // setNumberChange({id:null, number:""})
     }
     const handelEdit =(item)=>{
         setBoolValue(true);
@@ -45,8 +45,8 @@ const Add = () => {
                 {boolValue ?
                 <>
                  <input type="text" onChange={(e)=>handelChange(e)}  value={inputChange.name} ></input>
-                <input type="email" onChange={(e)=>handelEmail(e)}  value={inputChange.email} ></input>
-                <input type="number" onChange={(e)=>handelNumber(e)}  value={inputChange.number} ></input>
+                {/* <input type="email" onChange={(e)=>handelEmail(e)}  value={inputChange.email} ></input> */}
+                {/* <input type="number" onChange={(e)=>handelNumber(e)}  value={inputChange.number} ></input> */}
 
                 <button onClick={handelUpdate} >update</button>
                 </>:
@@ -58,18 +58,18 @@ const Add = () => {
                       handelAdd();
                     }
                   }}></input>
-                <input type="email" onChange={(e)=>handelEmail(e)}  value={inputChange.email} onKeyPress={(event) => {
+                {/* <input type="email" onChange={(e)=>handelEmail(e)}  value={inputChange.email} onKeyPress={(event) => {
                     if (event.key === "Enter") {
                       console.log(event);
                       handelAdd();
                     }
-                  }}></input>
-                <input type="number" onChange={(e)=>handelNumber(e)}  value={inputChange.number} onKeyPress={(event) => {
+                   }}></input> */}
+                 {/* <input type="number" onChange={(e)=>handelNumber(e)}  value={inputChange.number} onKeyPress={(event) =>{ 
                     if (event.key === "Enter") {
                       console.log(event);
                       handelAdd();
                     }
-                  }}></input>
+                  }}></input> */}
 
                 <button onClick={handelAdd} onKeyPress={(event) => {
                     if (event.key === "Enter") {
@@ -83,8 +83,8 @@ const Add = () => {
                 {addValue.map((curElem, index)=>{
                    return( <div key={index}>
                     <div>{curElem.name}</div>
-                    <div>{curElem.email}</div>
-                    <div>{curElem.number}</div>
+                    {/* <div>{curElem.email}</div> */}
+                    {/* <div>{curElem.number}</div> */}
                     <button onClick={()=>handelEdit(curElem)}>edit</button>
                     <button>delete</button>
                     </div>
