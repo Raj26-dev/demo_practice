@@ -24,7 +24,7 @@ const NavBars = () => {
           <NavLink to='/events' activeStyle>
             Scroll-Bottom
           </NavLink>
-          <NavLink to='/annual' activeStyle>
+          <NavLink to='/add' activeStyle>
             Crud
           </NavLink>
           
