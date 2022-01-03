@@ -22,15 +22,32 @@ const Card = () => {
             })
         }
 
+        // * clear all item of card
         const clearCart =()=>{
             return dispatch({
                 type: "CLEAR_CART",
                 
             })
         }
+
+        // * increment item of card
+        const increment =(id)=>{
+            return dispatch({
+                type: "INCREMENT",
+                payload: id
+            })
+        }
+
+        // * decrement item of card 
+        const decrement = (id)=>{
+            return dispatch({
+                type: "DECREMENT",
+                payload: id
+            })
+        }
     return (
         <>
-            <CardContext.Provider value = {{...state, removeItem, clearCart}}>
+            <CardContext.Provider value = {{...state, removeItem, clearCart, increment, decrement}}>
                 <ContextCard/>
             </CardContext.Provider>
         </>

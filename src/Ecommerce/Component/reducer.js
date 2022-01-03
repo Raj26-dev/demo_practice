@@ -14,6 +14,36 @@
             items:[]
         }
     }
+    if (action.type === "INCREMENT"){
+        let incrementCard = state.items.map((curElem)=> {
+            if (curElem.id === action.payload){
+                return {
+                    ...curElem,
+                    quantity: curElem.quantity + 1
+                };
+            }
+            return curElem;
+        }) 
+        return {
+            ...state, 
+            items: incrementCard
+        }
+    }
+    if (action.type === "DECREMENT"){
+        let decrement = state.items.map ((curElem)=>{
+            if (curElem.id === action.payload){
+                return {
+                    ...curElem,
+                    quantity : curElem.quantity - 1
+                };
+            }
+            return curElem
+        }).filter((curElem)=> curElem.quantity !== 0)
+        return {
+            ...state,
+            items: decrement
+        }
+    }
     return state;
 };
 
